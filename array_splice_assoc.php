@@ -1,4 +1,5 @@
 <?php
+//https://stackoverflow.com/questions/1783089/array-splice-for-associative-arrays
 
 $oldArray = array(
     "color" => "red",
