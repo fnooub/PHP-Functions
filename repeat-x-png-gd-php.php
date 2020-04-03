@@ -8,6 +8,7 @@
 /*
  * https://www.transparenttextures.com/
  * https://stackoverflow.com/questions/4060437/how-to-load-and-repeat-x-an-image-with-php-gd
+ * https://www.php.net/manual/en/function.imagecopy.php
 */
 $srcfile = 'arches.png';
 $outfile = 'background.png';
