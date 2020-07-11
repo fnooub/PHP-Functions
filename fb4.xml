@@ -292,7 +292,26 @@ a { text-decoration: none; }
 .tags-links a:last-child:after {
 	content:"";
 }
+/* Style the list */
+ul.breadcrumb { padding: 0; list-style: none }
+
+ul.breadcrumb li+li:before { content: "/\00a0" }
+
 ]]></b:skin>
+<b:if cond='data:view.isHomepage'>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "<data:blog.homepageUrl/>",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "<data:blog.homepageUrl/>search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</b:if>
 </head>
 <body>
 
@@ -395,7 +414,6 @@ a { text-decoration: none; }
 		<!-- trang post -->
 		<b:elseif cond='data:view.isPost'/>
 			<b:loop values='data:posts' var='post'>
-				<b:include data='post' name='postMetadataJSON'/>
 				<b:include data='post' name='isPost'/>
 			</b:loop>
 		<!-- trang tĩnh -->
@@ -440,7 +458,7 @@ a { text-decoration: none; }
 	<b:includable id='isArchive' var='post'>
 		<li>
 			<a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'><data:post.title/></a>
-			<span class="w3-right w3-margin-right w3-hide-small tags-links"><b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop></span>
+			<span class="w3-right w3-margin-right tags-links"><b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop></span>
 		</li>
 	</b:includable>
 
@@ -532,35 +550,38 @@ a { text-decoration: none; }
 
 	<!-- isPost -->
 	<b:includable id='isPost' var='post'>
-		<ol class='breadcrumbs' itemscope='' itemtype='https://schema.org/BreadcrumbList'>
-			<li>
-				<a expr:href='data:blog.homepageUrl' expr:title='data:messages.home'><span><data:messages.home/></span></a>
+		<!-- breadcrumbs -->
+		<ul class="breadcrumb w3-small w3-padding" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+			<li class="w3-show-inline-block" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+				<a itemprop='item' expr:href='data:blog.homepageUrl'><span itemprop="name">Sách</span></a>
+				<meta itemprop="position" content="1" />
 			</li>
 			<b:loop index='i' values='data:post.labels' var='label'>
-				<li itemprop='itemListElement' itemscope='' itemtype='https://schema.org/ListItem'>
-				<a expr:href='data:label.url' expr:title='data:label.name' itemprop='item'><span itemprop='name'><data:label.name/></span></a>
-				<meta expr:content='data:i + 1' itemprop='position'/>
-				</li>
+				<b:if cond='data:label.name in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+					<li class="w3-show-inline-block" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+						<a itemprop='item' expr:href='data:label.url'>
+							<span itemprop="name"><data:label.name/></span>
+						</a>
+						<meta itemprop='position' expr:content='data:i + 2'/>
+					</li>
+				</b:if>
 			</b:loop>
-		</ol>
+		</ul>
 
-		<div itemscope='itemscope' itemtype='http://schema.org/Book' expr:itemid='data:post.url' class='w3-row w3-padding-32'>
+		<div itemscope="" itemtype="http://schema.org/Book" class="w3-row w3-padding-32">
+			<meta itemprop="bookFormat" content="EBook"/>
+			<meta itemprop="inLanguage" content="vi"/>
+			<meta itemprop="publisher" content="SachVe.com"/>
+			<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+				<meta itemprop="price" content="0VND"/>
+				<meta itemprop="priceCurrency" content="VND"/>
+			</div>
 			<div class="w3-col s12 m12 l7 w3-padding-large w3-light-gray w3-round-large">
-				<h1 itemprop="name" class="w3-xlarge w3-text-indigo"><a expr:href='data:post.url' expr:title='data:post.title'><data:post.title/></a></h1>
-				<meta itemprop="bookFormat" content="EBook"/>
-				<meta itemprop='headline' expr:content='data:post.title'/>
-				<meta itemprop="inLanguage" content="vi"/>
-				<meta itemprop="publisher" content="Dự án Sachve.com"/>
-				<meta itemprop='description' expr:content='(data:post.body snippet { length: 150, links: false, linebreaks: false, ellipsis: true }).escaped'/>
-				<div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
-					<meta itemprop="priceCurrency" content="VND"/>
-					<meta itemprop="price" content="0VND"/>
-					<meta itemprop="availability" href="http://schema.org/InStock" content="In Stock"/>
-				</div>
+				<h1 itemprop='name' class="w3-xlarge w3-text-indigo"><a expr:href='data:post.url' expr:title='data:post.title'><data:post.title/></a></h1>
 				<ul class="w3-ul w3-border-0">
 					<li class="w3-padding-small tags-links w3-border-0">Tác giả: <b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-blue' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><span itemprop="author"><data:label.name/></span></a></b:if></b:loop></li>
 					<li class="w3-padding-small tags-links w3-border-0">Thể loại: <b:loop values='data:post.labels' var='label'><b:if cond='data:label.name in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-blue' expr:href='data:label.url' expr:title='"Thể loại " + data:label.name'><span itemprop="genre"><data:label.name/></span></a></b:if></b:loop></li>
-					<li class="w3-padding-small w3-border-0">Biên tập: <a itemprop="editor" class='w3-text-blue' expr:href='data:post.author.profileUrl'><data:post.author.name/></a></li>
+					<li class="w3-padding-small w3-border-0">Biên tập: <a class='w3-text-blue' expr:href='data:post.author.profileUrl'><span itemprop="editor"><data:post.author.name/></span></a></li>
 					<li class="w3-padding-small w3-border-0">Ngày tạo: <a class='w3-text-blue' expr:href='data:blog.homepageUrl + format(data:post.date, "YYYY/MM")'><span itemprop="datePublished"><b:eval expr='format(data:post.date, "d/M/Y")'/></span></a></li>
 					<li class="w3-padding-small w3-border-0">Tải về: 
 						<b:loop values='data:post.enclosures' var='enclosure'>
@@ -591,17 +612,15 @@ a { text-decoration: none; }
 					</li>
 				</ul>
 				
-				<div class="w3-padding-32">
-					<b:if cond='data:post.featuredImage'>
-						<img itemprop="image" class='w3-image w3-card-4 w3-auto w3-show' expr:src='data:post.featuredImage' expr:title='data:post.title' expr:alt='data:post.title'/>
-					<b:else/>
-						<img itemprop="image" class='w3-image w3-card-4 w3-auto w3-show' src='https://via.placeholder.com/120x180?text=SV' alt='no image'/>
-					</b:if>
-				</div>
+				<b:if cond='data:post.featuredImage'>
+					<div class="w3-padding-32">
+						<img itemprop='image' class='w3-image w3-card-4 w3-auto w3-show' expr:src='data:post.featuredImage' expr:title='data:post.title' expr:alt='data:post.title'/>
+					</div>
+				</b:if>
 
 				<div class="w3-padding-16">
 					<b>Giới thiệu tóm tắt tác phẩm:</b>
-					<div class="review"><data:post.body/></div>
+					<div itemprop="description" class="review"><data:post.body/></div>
 				</div>
 				
 			</div>
@@ -632,41 +651,6 @@ a { text-decoration: none; }
 		</b:if>
 	</b:includable>
 
-<b:includable id='postMetadataJSON' var='post'>
-<script type='application/ld+json'>
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "<data:post.url.canonical.jsonEscaped/>"
-  },
-  "headline": "<data:post.title.jsonEscaped/>",
-  "description": "<b:eval expr='(data:post.body snippet { length: 150, links: false, linebreaks: false, ellipsis: true }).jsonEscaped'/>",
-  "datePublished": "<data:post.date.iso8601.jsonEscaped/>",
-  "dateModified": "<data:post.lastUpdated.iso8601.jsonEscaped/>",
-  "image": {
-    "@type": "ImageObject",
-    "url": "<b:eval expr='(data:post.featuredImage ? resizeImage(data:post.featuredImage, 1200, "1200:630") : "https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=w1200").jsonEscaped'/>",
-    "height": <b:eval expr='data:post.featuredImage ? 630 : 348'/>,
-    "width": 1200
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Blogger",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=h60",
-      "width": 206,
-      "height": 60
-    }
-  },"author": {
-    "@type": "Person",
-    "name": "<data:post.author.name.jsonEscaped/>"
-  }
-}
-</script>
-</b:includable>
 
 </b:widget>
 
