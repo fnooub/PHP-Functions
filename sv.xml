@@ -363,7 +363,7 @@ a {color:#3f51b5;text-decoration:none;}
 						</b:includable>
 					</b:widget>
 					<!-- pho bien -->
-					<b:widget cond='not data:blog.isMobileRequest' id='PopularPosts1' locked='false' title='Sách phổ biến' type='PopularPosts' visible='true'>
+					<b:widget id='PopularPosts1' locked='false' title='Sách phổ biến' type='PopularPosts' visible='true'>
 						<b:widget-settings>
 							<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
 							<b:widget-setting name='showThumbnails'>false</b:widget-setting>
@@ -402,7 +402,7 @@ a {color:#3f51b5;text-decoration:none;}
 
 		<!-- content -->
 		<b:tag name='div'>
-		<b:attr name='class' value='sv-content w3-col l9 w3-padding-16'/>
+		<b:attr name='class' expr:value='data:blog.isMobileRequest ? "sv-content w3-col l12 w3-padding-16" : "sv-content w3-col l9 w3-padding-16"'/>
 			<div class="w3-light-gray w3-padding w3-round-large w3-border" style="min-height: 300px">
 
 <b:section id='Main' preferred='yes'>
