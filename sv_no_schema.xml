@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:js='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='vegeclub.xml' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+	<b:attr name='xmlns' value=''/>
+	<b:attr name='xmlns:b' value=''/>
+	<b:attr name='xmlns:expr' value=''/>
+	<b:attr name='xmlns:data' value=''/>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<meta expr:content='"text/html; charset=" + data:blog.encoding' http-equiv='Content-Type'/>
+<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+<link expr:href='data:view.url.canonical' rel='canonical'/>
+<!-- preconnect -->
+<link href="https://1.bp.blogspot.com" rel="preconnect"/>
+<link href="https://2.bp.blogspot.com" rel="preconnect"/>
+<link href="https://3.bp.blogspot.com" rel="preconnect"/>
+<link href="https://4.bp.blogspot.com" rel="preconnect"/>
+<link href="https://www.blogger.com" rel="preconnect"/>
+<!-- preload font -->
+<link rel="preload" href="//fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6K6MmTpA.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+<link rel="preload" href="//fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6D6MmTpA.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+<link rel="preload" href="//fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6I6MmTpA.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+<link rel="preload" href="//fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6J6MmTpA.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+<link rel="preload" href="//fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6H6Mk.woff2" as="font" type="font/woff2" crossorigin="crossorigin"/>
+<b:tag name='link' cond='data:view.featuredImage' expr:href='data:view.featuredImage' rel='image_src'/>  
+<b:if cond='data:view.isSingleItem or data:view.isHomepage'>
+	<title><data:view.title.escaped/></title>
+	<meta name='ROBOTS' content='INDEX, FOLLOW'/>
+	<meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:view.title.escaped' name='description'/>
+	<meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:view.title.escaped' property='og:description'/>
+<b:elseif cond='data:view.isSearch'/>
+	<b:if cond='data:view.search.label'>
+		<b:if cond='data:blog.searchLabel == "Cổ Đại"'>
+			<title>Sách thể loại Cổ Đại hay nhất</title>
+			<meta name='ROBOTS' content='INDEX, FOLLOW'/>
+			<meta content="Mô tả cho thể loại riêng" name="description"/>
+			<meta content="Mô tả cho thể loại riêng" property='og:description'/>
+		<b:else/>
+			<title><b:eval expr='"Tác giả : " + data:view.search.label.escaped'/></title>
+			<meta name='ROBOTS' content='NOINDEX, NOFOLLOW'/>
+			<meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:view.description.escaped' name='description'/>
+			<meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:view.description.escaped' property='og:description'/>
+		</b:if>
+	<b:elseif cond='data:view.search.query'/>
+		<title><b:eval expr='"Tìm kiếm : " + data:view.search.query.escaped'/></title>
+		<meta name='ROBOTS' content='NOINDEX, NOFOLLOW'/>
+		<meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:view.description.escaped' name='description'/>
+		<meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:view.description.escaped' property='og:description'/>
+	<b:else/>
+		<title>Sách cũ hơn</title>
+		<meta name='ROBOTS' content='NOINDEX, NOFOLLOW'/>
+		<meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:view.description.escaped' name='description'/>
+		<meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:view.description.escaped' property='og:description'/>
+	</b:if>
+<b:elseif cond='data:view.isArchive'/>
+	<title>Lưu trữ sách : <data:blog.pageName/></title>
+	<meta content="Trang lưu trữ" name="description"/>
+	<meta name='ROBOTS' content='NOINDEX, NOFOLLOW'/>
+<b:else/>
+	<title>Trang không tồn tại</title>
+	<meta name='ROBOTS' content='NOINDEX, NOFOLLOW'/>
+	<meta content="Trang bạn đang tìm kiếm không tồn tại!" name="description"/>
+</b:if>
+<meta expr:content='data:blog.url.canonical' property='og:url'/>
+<meta expr:content='data:view.title.escaped' property='og:title'/>
+<b:if cond='data:view.featuredImage'>
+	<meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='og:image'/>
+<b:elseif cond='data:widgets'/>
+	<b:loop values='data:widgets.Blog.first.posts where (p => p.featuredImage) map (p => p.featuredImage)' var='imageUrl'>
+		<meta expr:content='resizeImage(data:imageUrl, 1200, "1200:630")' property='og:image'/>
+	</b:loop>
+<b:elseif cond='data:blog.postImageUrl'/>
+	<meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='og:image'/>
+<b:else/>
+	<meta content="https://via.placeholder.com/120x180.webp?text=SV" property="og:image"/>
+</b:if>
+<!--[if IE]><script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script>
+<![endif]-->
+<b:skin><![CDATA[
+/* font face */
+@font-face{font-family:Pacifico;font-style:normal;font-weight:400;font-display:swap;src:local('Pacifico Regular'),local('Pacifico-Regular'),url(https://fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6K6MmTpA.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Pacifico;font-style:normal;font-weight:400;font-display:swap;src:local('Pacifico Regular'),local('Pacifico-Regular'),url(https://fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6D6MmTpA.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Pacifico;font-style:normal;font-weight:400;font-display:swap;src:local('Pacifico Regular'),local('Pacifico-Regular'),url(https://fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6I6MmTpA.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB}@font-face{font-family:Pacifico;font-style:normal;font-weight:400;font-display:swap;src:local('Pacifico Regular'),local('Pacifico-Regular'),url(https://fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6J6MmTpA.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Pacifico;font-style:normal;font-weight:400;font-display:swap;src:local('Pacifico Regular'),local('Pacifico-Regular'),url(https://fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6H6Mk.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
+audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
+audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+a{background-color:transparent}a:active,a:hover{outline-width:0}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
+button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
+button,input{overflow:visible}button,select{text-transform:none}
+button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}
+[type=checkbox],[type=radio]{padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+/* End extract */
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}.w3-serif{font-family:serif}
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
+hr{border:0;border-top:1px solid #eee;margin:20px 0}
+.w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
+.w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
+.w3-bordered tr,.w3-table-all tr{border-bottom:1px solid #ddd}.w3-striped tbody tr:nth-child(even){background-color:#f1f1f1}
+.w3-table-all tr:nth-child(odd){background-color:#fff}.w3-table-all tr:nth-child(even){background-color:#f1f1f1}
+.w3-hoverable tbody tr:hover,.w3-ul.w3-hoverable li:hover{background-color:#ccc}.w3-centered tr th,.w3-centered tr td{text-align:center}
+.w3-table td,.w3-table th,.w3-table-all td,.w3-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
+.w3-table th:first-child,.w3-table td:first-child,.w3-table-all th:first-child,.w3-table-all td:first-child{padding-left:16px}
+.w3-btn,.w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.w3-btn,.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.w3-disabled,.w3-btn:disabled,.w3-button:disabled{cursor:not-allowed;opacity:0.3}.w3-disabled *,:disabled *{pointer-events:none}
+.w3-btn.w3-disabled:hover,.w3-btn:disabled:hover{box-shadow:none}
+.w3-badge,.w3-tag{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}.w3-badge{border-radius:50%}
+.w3-ul{list-style-type:none;padding:0;margin:0}.w3-ul li{padding:8px 16px;border-bottom:1px solid #ddd}.w3-ul li:last-child{border-bottom:none}
+.w3-tooltip,.w3-display-container{position:relative}.w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{display:inline-block}
+.w3-ripple:active{opacity:0.5}.w3-ripple{transition:opacity 0s}
+.w3-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+.w3-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}
+.w3-dropdown-click,.w3-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
+.w3-dropdown-hover:hover .w3-dropdown-content{display:block}
+.w3-dropdown-hover:first-child,.w3-dropdown-click:hover{background-color:#ccc;color:#000}
+.w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:#ccc;color:#000}
+.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
+.w3-check,.w3-radio{width:24px;height:24px;position:relative;top:6px}
+.w3-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
+.w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
+.w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{min-width:100%}
+.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+.w3-main,#main{transition:margin-left .4s}
+.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+.w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
+.w3-bar{width:100%;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}
+.w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.w3-bar .w3-dropdown-hover,.w3-bar .w3-dropdown-click{position:static;float:left}
+.w3-bar .w3-button{white-space:normal}
+.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
+.w3-responsive{display:block;overflow-x:auto}
+.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
+.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
+.w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{float:left;width:100%}
+.w3-col.s1{width:8.33333%}.w3-col.s2{width:16.66666%}.w3-col.s3{width:24.99999%}.w3-col.s4{width:33.33333%}
+.w3-col.s5{width:41.66666%}.w3-col.s6{width:49.99999%}.w3-col.s7{width:58.33333%}.w3-col.s8{width:66.66666%}
+.w3-col.s9{width:74.99999%}.w3-col.s10{width:83.33333%}.w3-col.s11{width:91.66666%}.w3-col.s12{width:99.99999%}
+@media (min-width:601px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}
+.w3-col.m5{width:41.66666%}.w3-col.m6,.w3-half{width:49.99999%}.w3-col.m7{width:58.33333%}.w3-col.m8,.w3-twothird{width:66.66666%}
+.w3-col.m9,.w3-threequarter{width:74.99999%}.w3-col.m10{width:83.33333%}.w3-col.m11{width:91.66666%}.w3-col.m12{width:99.99999%}}
+@media (min-width:993px){.w3-col.l1{width:8.33333%}.w3-col.l2{width:16.66666%}.w3-col.l3{width:24.99999%}.w3-col.l4{width:33.33333%}
+.w3-col.l5{width:41.66666%}.w3-col.l6{width:49.99999%}.w3-col.l7{width:58.33333%}.w3-col.l8{width:66.66666%}
+.w3-col.l9{width:74.99999%}.w3-col.l10{width:83.33333%}.w3-col.l11{width:91.66666%}.w3-col.l12{width:99.99999%}}
+.w3-rest{overflow:hidden}.w3-stretch{margin-left:-16px;margin-right:-16px}
+.w3-content,.w3-auto{margin-left:auto;margin-right:auto}.w3-content{max-width:980px}.w3-auto{max-width:1140px}
+.w3-cell-row{display:table;width:100%}.w3-cell{display:table-cell}
+.w3-cell-top{vertical-align:top}.w3-cell-middle{vertical-align:middle}.w3-cell-bottom{vertical-align:bottom}
+.w3-hide{display:none!important}.w3-show-block,.w3-show{display:block!important}.w3-show-inline-block{display:inline-block!important}
+@media (max-width:1205px){.w3-auto{max-width:95%}}
+@media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}.w3-modal{padding-top:30px}
+.w3-dropdown-hover.w3-mobile .w3-dropdown-content,.w3-dropdown-click.w3-mobile .w3-dropdown-content{position:relative}	
+.w3-hide-small{display:none!important}.w3-mobile{display:block;width:100%!important}.w3-bar-item.w3-mobile,.w3-dropdown-hover.w3-mobile,.w3-dropdown-click.w3-mobile{text-align:center}
+.w3-dropdown-hover.w3-mobile,.w3-dropdown-hover.w3-mobile .w3-btn,.w3-dropdown-hover.w3-mobile .w3-button,.w3-dropdown-click.w3-mobile,.w3-dropdown-click.w3-mobile .w3-btn,.w3-dropdown-click.w3-mobile .w3-button{width:100%}}
+@media (max-width:768px){.w3-modal-content{width:500px}.w3-modal{padding-top:50px}}
+@media (min-width:993px){.w3-modal-content{width:900px}.w3-hide-large{display:none!important}.w3-sidebar.w3-collapse{display:block!important}}
+@media (max-width:992px) and (min-width:601px){.w3-hide-medium{display:none!important}}
+@media (max-width:992px){.w3-sidebar.w3-collapse{display:none}.w3-main{margin-left:0!important;margin-right:0!important}.w3-auto{max-width:100%}}
+.w3-top,.w3-bottom{position:fixed;width:100%;z-index:1}.w3-top{top:0}.w3-bottom{bottom:0}
+.w3-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
+.w3-display-topleft{position:absolute;left:0;top:0}.w3-display-topright{position:absolute;right:0;top:0}
+.w3-display-bottomleft{position:absolute;left:0;bottom:0}.w3-display-bottomright{position:absolute;right:0;bottom:0}
+.w3-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.w3-display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
+.w3-display-right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
+.w3-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.w3-display-bottommiddle{position:absolute;left:50%;bottom:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.w3-display-container:hover .w3-display-hover{display:block}.w3-display-container:hover span.w3-display-hover{display:inline-block}.w3-display-hover{display:none}
+.w3-display-position{position:absolute}
+.w3-circle{border-radius:50%}
+.w3-round-small{border-radius:2px}.w3-round,.w3-round-medium{border-radius:4px}.w3-round-large{border-radius:8px}.w3-round-xlarge{border-radius:16px}.w3-round-xxlarge{border-radius:32px}
+.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 8px}
+.w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
+.w3-code,.w3-codespan{font-family:Consolas,"courier new";font-size:16px}
+.w3-code{width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #4CAF50;word-wrap:break-word}
+.w3-codespan{color:crimson;background-color:#f1f1f1;padding-left:4px;padding-right:4px;font-size:110%}
+.w3-card,.w3-card-2{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.w3-spin{animation:w3-spin 2s infinite linear}@keyframes w3-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
+.w3-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.w3-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.w3-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.w3-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.w3-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.w3-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+.w3-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.w3-animate-input{transition:width 0.4s ease-in-out}.w3-animate-input:focus{width:100%!important}
+.w3-opacity,.w3-hover-opacity:hover{opacity:0.60}.w3-opacity-off,.w3-hover-opacity-off:hover{opacity:1}
+.w3-opacity-max{opacity:0.25}.w3-opacity-min{opacity:0.75}
+.w3-greyscale-max,.w3-grayscale-max,.w3-hover-greyscale:hover,.w3-hover-grayscale:hover{filter:grayscale(100%)}
+.w3-greyscale,.w3-grayscale{filter:grayscale(75%)}.w3-greyscale-min,.w3-grayscale-min{filter:grayscale(50%)}
+.w3-sepia{filter:sepia(75%)}.w3-sepia-max,.w3-hover-sepia:hover{filter:sepia(100%)}.w3-sepia-min{filter:sepia(50%)}
+.w3-tiny{font-size:10px!important}.w3-small{font-size:12px!important}.w3-medium{font-size:15px!important}.w3-large{font-size:18px!important}
+.w3-xlarge{font-size:24px!important}.w3-xxlarge{font-size:36px!important}.w3-xxxlarge{font-size:48px!important}.w3-jumbo{font-size:64px!important}
+.w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}.w3-justify{text-align:justify!important}.w3-center{text-align:center!important}
+.w3-border-0{border:0!important}.w3-border{border:1px solid #ccc!important}
+.w3-border-top{border-top:1px solid #ccc!important}.w3-border-bottom{border-bottom:1px solid #ccc!important}
+.w3-border-left{border-left:1px solid #ccc!important}.w3-border-right{border-right:1px solid #ccc!important}
+.w3-topbar{border-top:6px solid #ccc!important}.w3-bottombar{border-bottom:6px solid #ccc!important}
+.w3-leftbar{border-left:6px solid #ccc!important}.w3-rightbar{border-right:6px solid #ccc!important}
+.w3-section,.w3-code{margin-top:16px!important;margin-bottom:16px!important}
+.w3-margin{margin:16px!important}.w3-margin-top{margin-top:16px!important}.w3-margin-bottom{margin-bottom:16px!important}
+.w3-margin-left{margin-left:16px!important}.w3-margin-right{margin-right:16px!important}
+.w3-padding-small{padding:4px 8px!important}.w3-padding{padding:8px 16px!important}.w3-padding-large{padding:12px 24px!important}
+.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}.w3-padding-24{padding-top:24px!important;padding-bottom:24px!important}
+.w3-padding-32{padding-top:32px!important;padding-bottom:32px!important}.w3-padding-48{padding-top:48px!important;padding-bottom:48px!important}
+.w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.w3-left{float:left!important}.w3-right{float:right!important}
+.w3-button:hover{color:#000!important;background-color:#ccc!important}
+.w3-transparent,.w3-hover-none:hover{background-color:transparent!important}
+.w3-hover-none:hover{box-shadow:none!important}
+/* Colors */
+.w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
+.w3-aqua,.w3-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
+.w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
+.w3-light-blue,.w3-hover-light-blue:hover{color:#000!important;background-color:#87CEEB!important}
+.w3-brown,.w3-hover-brown:hover{color:#fff!important;background-color:#795548!important}
+.w3-cyan,.w3-hover-cyan:hover{color:#000!important;background-color:#00bcd4!important}
+.w3-blue-grey,.w3-hover-blue-grey:hover,.w3-blue-gray,.w3-hover-blue-gray:hover{color:#fff!important;background-color:#607d8b!important}
+.w3-green,.w3-hover-green:hover{color:#fff!important;background-color:#4CAF50!important}
+.w3-light-green,.w3-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
+.w3-indigo,.w3-hover-indigo:hover{color:#fff!important;background-color:#3f51b5!important}
+.w3-khaki,.w3-hover-khaki:hover{color:#000!important;background-color:#f0e68c!important}
+.w3-lime,.w3-hover-lime:hover{color:#000!important;background-color:#cddc39!important}
+.w3-orange,.w3-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+.w3-deep-orange,.w3-hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}
+.w3-pink,.w3-hover-pink:hover{color:#fff!important;background-color:#e91e63!important}
+.w3-purple,.w3-hover-purple:hover{color:#fff!important;background-color:#9c27b0!important}
+.w3-deep-purple,.w3-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}
+.w3-red,.w3-hover-red:hover{color:#fff!important;background-color:#f44336!important}
+.w3-sand,.w3-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}
+.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+.w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
+.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#fff!important}
+.w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
+.w3-grey,.w3-hover-grey:hover,.w3-gray,.w3-hover-gray:hover{color:#000!important;background-color:#9e9e9e!important}
+.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
+.w3-dark-grey,.w3-hover-dark-grey:hover,.w3-dark-gray,.w3-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}
+.w3-pale-red,.w3-hover-pale-red:hover{color:#000!important;background-color:#ffdddd!important}
+.w3-pale-green,.w3-hover-pale-green:hover{color:#000!important;background-color:#ddffdd!important}
+.w3-pale-yellow,.w3-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}
+.w3-pale-blue,.w3-hover-pale-blue:hover{color:#000!important;background-color:#ddffff!important}
+.w3-text-amber,.w3-hover-text-amber:hover{color:#ffc107!important}
+.w3-text-aqua,.w3-hover-text-aqua:hover{color:#00ffff!important}
+.w3-text-blue,.w3-hover-text-blue:hover{color:#2196F3!important}
+.w3-text-light-blue,.w3-hover-text-light-blue:hover{color:#87CEEB!important}
+.w3-text-brown,.w3-hover-text-brown:hover{color:#795548!important}
+.w3-text-cyan,.w3-hover-text-cyan:hover{color:#00bcd4!important}
+.w3-text-blue-grey,.w3-hover-text-blue-grey:hover,.w3-text-blue-gray,.w3-hover-text-blue-gray:hover{color:#607d8b!important}
+.w3-text-green,.w3-hover-text-green:hover{color:#4CAF50!important}
+.w3-text-light-green,.w3-hover-text-light-green:hover{color:#8bc34a!important}
+.w3-text-indigo,.w3-hover-text-indigo:hover{color:#3f51b5!important}
+.w3-text-khaki,.w3-hover-text-khaki:hover{color:#b4aa50!important}
+.w3-text-lime,.w3-hover-text-lime:hover{color:#cddc39!important}
+.w3-text-orange,.w3-hover-text-orange:hover{color:#ff9800!important}
+.w3-text-deep-orange,.w3-hover-text-deep-orange:hover{color:#ff5722!important}
+.w3-text-pink,.w3-hover-text-pink:hover{color:#e91e63!important}
+.w3-text-purple,.w3-hover-text-purple:hover{color:#9c27b0!important}
+.w3-text-deep-purple,.w3-hover-text-deep-purple:hover{color:#673ab7!important}
+.w3-text-red,.w3-hover-text-red:hover{color:#f44336!important}
+.w3-text-sand,.w3-hover-text-sand:hover{color:#fdf5e6!important}
+.w3-text-teal,.w3-hover-text-teal:hover{color:#009688!important}
+.w3-text-yellow,.w3-hover-text-yellow:hover{color:#d2be0e!important}
+.w3-text-white,.w3-hover-text-white:hover{color:#fff!important}
+.w3-text-black,.w3-hover-text-black:hover{color:#000!important}
+.w3-text-grey,.w3-hover-text-grey:hover,.w3-text-gray,.w3-hover-text-gray:hover{color:#757575!important}
+.w3-text-light-grey,.w3-hover-text-light-grey:hover,.w3-text-light-gray,.w3-hover-text-light-gray:hover{color:#f1f1f1!important}
+.w3-text-dark-grey,.w3-hover-text-dark-grey:hover,.w3-text-dark-gray,.w3-hover-text-dark-gray:hover{color:#3a3a3a!important}
+.w3-border-amber,.w3-hover-border-amber:hover{border-color:#ffc107!important}
+.w3-border-aqua,.w3-hover-border-aqua:hover{border-color:#00ffff!important}
+.w3-border-blue,.w3-hover-border-blue:hover{border-color:#2196F3!important}
+.w3-border-light-blue,.w3-hover-border-light-blue:hover{border-color:#87CEEB!important}
+.w3-border-brown,.w3-hover-border-brown:hover{border-color:#795548!important}
+.w3-border-cyan,.w3-hover-border-cyan:hover{border-color:#00bcd4!important}
+.w3-border-blue-grey,.w3-hover-border-blue-grey:hover,.w3-border-blue-gray,.w3-hover-border-blue-gray:hover{border-color:#607d8b!important}
+.w3-border-green,.w3-hover-border-green:hover{border-color:#4CAF50!important}
+.w3-border-light-green,.w3-hover-border-light-green:hover{border-color:#8bc34a!important}
+.w3-border-indigo,.w3-hover-border-indigo:hover{border-color:#3f51b5!important}
+.w3-border-khaki,.w3-hover-border-khaki:hover{border-color:#f0e68c!important}
+.w3-border-lime,.w3-hover-border-lime:hover{border-color:#cddc39!important}
+.w3-border-orange,.w3-hover-border-orange:hover{border-color:#ff9800!important}
+.w3-border-deep-orange,.w3-hover-border-deep-orange:hover{border-color:#ff5722!important}
+.w3-border-pink,.w3-hover-border-pink:hover{border-color:#e91e63!important}
+.w3-border-purple,.w3-hover-border-purple:hover{border-color:#9c27b0!important}
+.w3-border-deep-purple,.w3-hover-border-deep-purple:hover{border-color:#673ab7!important}
+.w3-border-red,.w3-hover-border-red:hover{border-color:#f44336!important}
+.w3-border-sand,.w3-hover-border-sand:hover{border-color:#fdf5e6!important}
+.w3-border-teal,.w3-hover-border-teal:hover{border-color:#009688!important}
+.w3-border-yellow,.w3-hover-border-yellow:hover{border-color:#ffeb3b!important}
+.w3-border-white,.w3-hover-border-white:hover{border-color:#fff!important}
+.w3-border-black,.w3-hover-border-black:hover{border-color:#000!important}
+.w3-border-grey,.w3-hover-border-grey:hover,.w3-border-gray,.w3-hover-border-gray:hover{border-color:#9e9e9e!important}
+.w3-border-light-grey,.w3-hover-border-light-grey:hover,.w3-border-light-gray,.w3-hover-border-light-gray:hover{border-color:#f1f1f1!important}
+.w3-border-dark-grey,.w3-hover-border-dark-grey:hover,.w3-border-dark-gray,.w3-hover-border-dark-gray:hover{border-color:#616161!important}
+.w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}
+.w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}
+/* custom */
+a:focus, a:hover {color:#000;text-decoration:underline;}
+a {color:#3f51b5;text-decoration:none;}
+.sv-wrapper { max-width: 1000px; margin: 0 auto }
+.sv-padding-left { padding-left: 16px }
+.sv-padding-right { padding-right: 16px }
+.sv-padding-top { padding-top: 16px }
+.sv-padding-bottom { padding-bottom: 16px }
+.sv-padding-0 { padding: 0 }
+.sv-margin-0 { margin: 0 }
+.sv-style-none { list-style-type: none; }
+.sv-line-height { line-height: normal; }
+.sv-clearfix::after { content: ""; clear: both; display: table }
+.sv-review img { margin: 16px auto; display: block; max-width: 250px; width: 100% }
+.section, .widget { padding: 0; margin: 0; border: none }
+.sv-tags-links a:after { content:", " }
+.sv-tags-links a:last-child:after { content:"" }
+.sv-breadcrumb { list-style: none }
+.sv-breadcrumb li+li:before { content: "/\00a0" }
+.sv-ul li { padding-left: 10px; font-size: 14px; }
+.sv-thumbnail { width: 110px }
+@media (max-width:600px) {
+	.sv-thumbnail { width: 72px }
+}
+.sv-entry-title { font-size: 16px; margin-bottom: 8px; max-height: 45px; overflow: hidden; text-overflow: ellipsis; }
+.sv-ff { font-family: 'Pacifico', cursive; }
+.sv-text-uppercase { text-transform: uppercase; }
+@media (max-width:992px) and (min-width:601px) {
+	.sv-tablet { width: 100% }
+}
+.sv-align-center { clear: both; display: block; margin: 0 auto }
+]]></b:skin>
+</head>
+<body>
+<!-- header -->
+<div class="w3-container sv-wrapper">
+	<!-- logo -->
+	<div class="w3-panel w3-blue w3-round w3-card">
+		<div class="w3-xxlarge sv-ff"><a class="w3-text-white" href="https://cusex.blogspot.com/" title="Cu ebooks">Sách về...</a></div>
+		<div class="w3-wide w3-margin-bottom sv-ff">Thư viện <span class="sv-text-uppercase">ebooks</span> miễn phí</div>
+	</div>
+	<!-- nav -->
+	<div class="w3-bar w3-light-grey w3-card w3-section w3-round">
+		<a class='w3-bar-item w3-button' expr:href='data:blog.homepageUrl' title='Trang chủ'>Trang chủ</a>
+		<a class='w3-bar-item w3-button' expr:href='data:blog.homepageUrl + "p/the-loai.html"' title='Thể loại'>Thể loại</a>
+		<a class='w3-bar-item w3-button' expr:href='data:blog.homepageUrl + "p/tac-gia.html"' title='Tác giả'>Tác giả</a>
+		<a class='w3-bar-item w3-button' expr:href='data:blog.homepageUrl + "p/sach-xem-nhieu.html"' title='Sách xem nhiều'>Top sách</a>
+		<form class='w3-right w3-mobile w3-row sv-tablet' expr:action='data:blog.searchUrl'>
+			<input class='w3-bar-item w3-input w3-white w3-col s10' type='search' name='q' placeholder='Tìm tác giả, tác phẩm...' expr:value='data:view.isSearch ? data:view.search.query.escaped : ""'/>
+			<button type="submit" class="w3-bar-item w3-button w3-green w3-col s2"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg></button>
+		</form>
+	</div>
+
+
+	<!-- main -->
+	<div class="w3-row-padding w3-stretch">
+		<b:if cond='not data:blog.isMobileRequest'>
+		<!-- sidebar -->
+		<div class="sv-sidebar w3-col l3 w3-padding-16 w3-hide-small w3-hide-medium">
+			<div class="w3-light-gray w3-padding w3-round-large w3-border">
+				<!-- category -->
+				<b:section id='Sidebar1'>
+					<b:widget id='Label1' locked='false' title='Thể loại' type='Label' visible='true'>
+						<b:includable id='main' var='this'>
+							<h2 class="w3-border-bottom w3-border-blue w3-large sv-ff">Thể loại</h2>
+							<ul class="sv-style-none sv-padding-0 sv-margin-0 sv-ul">
+								<b:loop values='data:labels' var='label'>
+									<b:if cond='data:label.name in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+										<li class='w3-text-dark-gray'><a class='w3-text-dark-gray' expr:href='data:label.url' expr:title='"Thể loại " + data:label.name'><data:label.name/> <span class="w3-text-gray w3-small">(<data:label.count/>)</span></a></li>
+									</b:if>
+								</b:loop>
+							</ul>
+						</b:includable>
+					</b:widget>
+					<!-- pho bien -->
+					<b:widget id='PopularPosts1' locked='false' title='Sách phổ biến' type='PopularPosts' visible='true'>
+						<b:widget-settings>
+							<b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+							<b:widget-setting name='showThumbnails'>false</b:widget-setting>
+							<b:widget-setting name='showSnippets'>false</b:widget-setting>
+							<b:widget-setting name='timeRange'>LAST_WEEK</b:widget-setting>
+						</b:widget-settings>
+						<b:includable id='main' var='this'>
+							<b:include name='isPhoBien'/>
+						</b:includable>
+						<b:includable id='isPhoBien'>
+							<h2 class="w3-border-bottom w3-border-blue w3-large"><span class="sv-ff">Sách tuần</span></h2>
+							<b:loop index='i' values='data:posts filter (p => p.id)' var='post'>
+								<b:if cond='data:i lt 5'>
+									<div class="w3-display-container w3-center w3-section">
+										<div class="w3-display-topleft">
+											<span class="w3-badge w3-gray w3-text-white w3-large"><b:eval expr='data:i + 1'/></span>
+										</div>
+										<a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'>
+											<b:if cond='data:post.featuredImage'>
+												<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' expr:data-src='data:post.featuredImage resizeImage 110' expr:title='data:post.title' expr:alt='data:post.title' style='width: 110px'/>
+											<b:else/>
+												<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src='https://via.placeholder.com/120x180.webp?text=SV' alt='no image' style='width: 110px'/>
+											</b:if>
+										</a>
+									</div>
+								</b:if>
+							</b:loop>
+						</b:includable>
+					</b:widget>
+
+				</b:section>
+			</div>
+		</div>
+		<!-- /.sidebar -->
+		</b:if>
+
+		<!-- content -->
+		<b:tag name='div'>
+		<b:attr name='class' expr:value='data:blog.isMobileRequest ? "sv-content w3-col l12 w3-padding-16" : "sv-content w3-col l9 w3-padding-16"'/>
+			<div class="w3-light-gray w3-padding w3-round-large w3-border" style="min-height: 300px">
+
+<b:section id='Main' preferred='yes'>
+<!-- noi bat -->
+<b:widget cond='data:view.isHomepage' id='FeaturedPost1' locked='false' title='Sách nổi bật' type='FeaturedPost' visible='true'>
+	<b:includable id='main' var='this'>
+		<b:include name='isNoiBat'/>
+	</b:includable>
+	<b:includable id='isNoiBat'>
+		<b:loop values='data:posts filter (p => p.id)' var='post'>
+			<div class="w3-row w3-section w3-white">
+				<div class="w3-col sv-thumbnail w3-display-container">
+					<div class="w3-display-topleft">
+						<span class="w3-red w3-text-white w3-small" style="padding: 2px">Sách hay</span>
+					</div>
+					<a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'>
+						<b:if cond='data:post.featuredImage'>
+							<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' expr:data-src='data:post.featuredImage resizeImage 120' expr:title='data:post.title' expr:alt='data:post.title'/>
+						<b:else/>
+							<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src='https://via.placeholder.com/120x180?text=SV' alt='no image'/>
+						</b:if>
+					</a>
+				</div>
+				<div class="w3-rest sv-padding-left">
+					<div class="w3-row-padding">
+						<div class="w3-col l8">
+							<h3 class="sv-margin-0 sv-line-height sv-entry-title"><a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'><data:post.title/></a></h3>
+							<h4 class="w3-medium w3-text-dark-gray sv-line-height sv-margin-0 w3-margin-bottom sv-tags-links">tg <em><b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop></em></h4>
+							<b:if cond='data:blog.isMobileRequest'>
+								<div class="w3-text-gray w3-small w3-hide-medium w3-hide-large"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+							</b:if>
+							<p class="w3-small w3-hide-small">
+								<b:eval expr='(data:post.body snippet { length: 150, links: false, linebreaks: false, ellipsis: true }).escaped'/>
+							</p>
+						</div>
+						<b:if cond='not data:blog.isMobileRequest'>
+							<div class="w3-col l4 w3-center w3-hide-small w3-hide-medium">
+								<div class="w3-padding-16">
+									<b:loop values='data:post.labels' var='label'>
+										<b:if cond='data:label.name in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+											<div class="w3-small"><a expr:href='data:label.url' expr:title='"Thể loại " + data:label.name'><data:label.name/></a></div>
+										</b:if>
+									</b:loop>
+									<div class="w3-text-gray w3-small w3-margin-top"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+								</div>
+							</div>
+						</b:if>
+					</div>
+				</div>
+			</div>
+		</b:loop>
+	</b:includable>
+
+</b:widget>
+
+<!-- blog -->
+<b:widget id='Blog1' locked='true' title='Bài đăng trên Blog' type='Blog' version='2' visible='true'>
+	<b:includable id='main'>
+
+		<!-- Trang lỗi 404 -->
+		<b:if cond='data:view.isError'>
+			<b:include name='isError'/>
+		<!-- homepage -->
+		<b:elseif cond='data:view.isHomepage'/>
+			<!-- sach moi -->
+			<b:loop values='data:posts' var='post'>
+				<b:include data='post' name='isSearch'/>
+			</b:loop>
+			<!-- isSearch Pagination -->
+			<b:include name='postPagination'/>
+		<!-- trang luu tru -->
+		<b:elseif cond='data:view.isArchive'/>
+			<h1 class="w3-border-bottom w3-xlarge">Lưu trữ: <data:blog.pageName/></h1>
+			<!-- include isSearch -->
+			<b:if cond='data:posts.empty'>
+				<!-- isEmpty -->
+				<b:include name='isEmpty'/>
+			<b:else/>
+				<ul class="w3-ul">
+					<b:loop values='data:posts' var='post'>
+						<b:include data='post' name='isArchive'/>
+					</b:loop>
+				</ul>
+			</b:if>
+		<!-- trang post -->
+		<b:elseif cond='data:view.isPost'/>
+			<b:loop values='data:posts' var='post'>
+				<b:include data='post' name='isPost'/>
+			</b:loop>
+		<!-- trang tĩnh -->
+		<b:elseif cond='data:view.isPage'/>
+			<b:if cond='data:blog.url == data:blog.homepageUrl path "p/the-loai.html" or data:blog.url == data:blog.homepageUrl path "p/tac-gia.html" or data:blog.url == data:blog.homepageUrl path "p/sach-xem-nhieu.html"'>
+				<!-- empty -->
+			<b:else/>
+				<b:loop values='data:posts' var='post'>
+					<b:include data='post' name='isPage'/>
+				</b:loop>
+			</b:if>
+		<!-- Trang search chung {nhãn, tìm kiếm, posts kế tiếp} -->
+		<b:elseif cond='data:view.isSearch'/>
+			<b:if cond='data:blog.searchLabel == "Cổ Đại"'>
+				<h1 class="w3-border-bottom w3-border-blue w3-large sv-ff">Cổ Đại</h1>
+				<div class="w3-section w3-padding w3-pale-blue w3-leftbar w3-rightbar w3-border-blue w3-small">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate ullam, deleniti reprehenderit quam quisquam dolorem dignissimos soluta ab incidunt accusamus dolores consequatur aliquam perspiciatis, placeat, repellendus ut fuga ex debitis!
+				</div>
+			<b:else/>
+				<h1 class="w3-border-bottom w3-border-blue w3-large sv-ff">
+					<b:eval expr='data:blog.pageName ? data:blog.pageName : "Sách mới"'/>
+				</h1>
+			</b:if>
+			<b:if cond='data:posts.empty'>
+				<!-- isEmpty -->
+				<b:include name='isEmpty'/>
+			<b:else/>
+				<!-- isSearch -->
+				<b:loop values='data:posts' var='post'>
+					<b:include data='post' name='isSearch'/>
+				</b:loop>
+			</b:if>
+			<!-- isSearch Pagination -->
+			<b:include name='postPagination'/>
+		</b:if>
+	</b:includable>
+
+	<!-- isError -->
+	<b:includable id='isError'>
+		<div class="w3-leftbar w3-border-orange w3-pale-yellow w3-padding">Trang bạn đang tìm không tồn tại!</div>
+	</b:includable>
+
+	<!-- isEmpty -->
+	<b:includable id='isEmpty'>
+		<div class="w3-leftbar w3-border-orange w3-pale-yellow w3-padding">Bài viết rỗng!</div>
+	</b:includable>
+
+	<!-- isArchive -->
+	<b:includable id='isArchive' var='post'>
+		<li>
+			<a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'><data:post.title/></a>
+			<b:if cond='not data:blog.isMobileRequest'>
+				<span class="w3-right w3-margin-right w3-hide-small sv-tags-links"><b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop></span>
+			</b:if>
+		</li>
+	</b:includable>
+
+	<!-- isPage -->
+	<b:includable id='isPage' var='post'>
+		<h1 class="w3-border-bottom w3-border-blue w3-large sv-ff"><data:post.title/></h1>
+		<div class="w3-text-gray w3-small"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+		<div class="w3-padding-16 sv-review"><data:post.body/></div>
+	</b:includable>
+
+	<!-- isSearch -->
+	<b:includable id='isSearch' var='post'>
+		<div class="w3-row w3-section">
+			<div class="w3-col sv-thumbnail">
+				<a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'>
+					<b:if cond='data:post.featuredImage'>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' expr:data-src='data:post.featuredImage resizeImage 120' expr:title='data:post.title' expr:alt='data:post.title'/>
+					<b:else/>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src='https://via.placeholder.com/120x180?text=SV' alt='no image'/>
+					</b:if>
+				</a>
+			</div>
+			<div class="w3-rest sv-padding-left">
+				<div class="w3-row-padding">
+					<div class="w3-col l8">
+						<h3 class="sv-margin-0 sv-line-height sv-entry-title"><a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'><data:post.title/></a></h3>
+						<h4 class="w3-medium w3-text-dark-gray sv-line-height sv-margin-0 w3-margin-bottom sv-tags-links">tg <em><b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop></em></h4>
+						<b:if cond='data:blog.isMobileRequest'>
+							<div class="w3-text-gray w3-small w3-hide-medium w3-hide-large"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+						</b:if>
+						<p class="w3-small w3-hide-small">
+							<b:eval expr='(data:post.body snippet { length: 150, links: false, linebreaks: false, ellipsis: true }).escaped'/>
+						</p>
+					</div>
+					<b:if cond='not data:blog.isMobileRequest'>
+						<div class="w3-col l4 w3-center w3-hide-small w3-hide-medium">
+							<div class="w3-padding-16">
+								<b:loop values='data:post.labels' var='label'>
+									<b:if cond='data:label.name in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+										<div class="w3-small"><a expr:href='data:label.url' expr:title='"Thể loại " + data:label.name'><data:label.name/></a></div>
+									</b:if>
+								</b:loop>
+								<div class="w3-text-gray w3-small w3-margin-top"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+							</div>
+						</div>
+					</b:if>
+				</div>
+			</div>
+		</div>
+	</b:includable>
+
+	<!-- isPost -->
+	<b:includable id='isPost' var='post'>
+		<ul class="sv-breadcrumb sv-padding-0 w3-border-bottom w3-border-blue">
+			<li class="w3-show-inline-block"><a expr:href='data:blog.homepageUrl'>Sách</a></li>
+			<b:loop values='data:post.labels' var='label'>
+				<b:if cond='data:label.name in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+					<li class="w3-show-inline-block"><a expr:href='data:label.url'><data:label.name/></a></li>
+				</b:if>
+			</b:loop>
+		</ul>
+		<div class="w3-row-padding">
+			<div class="w3-col s12 m3">
+				<b:if cond='data:post.featuredImage'>
+					<img class='w3-image w3-card-4 sv-align-center w3-margin-bottom' expr:src='data:post.featuredImage resizeImage 300' expr:alt='data:post.title'/>
+				<b:else/>
+					<img class="w3-image w3-card-4 sv-align-center w3-margin-bottom" src="https://via.placeholder.com/120x180?text=SV" alt="no cover"/>
+				</b:if>
+			</div>
+			<div class="w3-col s12 m9">
+				<h1 class="w3-large w3-margin-bottom sv-margin-0"><data:post.title/></h1>
+				<ul class="w3-ul">
+					<li class="sv-tags-links">Tác giả: 
+						<b:loop values='data:post.labels' var='label'>
+							<b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+								<a expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a>
+							</b:if>
+						</b:loop>
+					</li>
+					<li class="sv-tags-links">Thể loại: 
+						<b:loop values='data:post.labels' var='label'>
+							<b:if cond='data:label.name in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+								<a expr:href='data:label.url' expr:title='"Thể loại " + data:label.name'><data:label.name/></a>
+							</b:if>
+						</b:loop>
+					</li>
+					<li>Biên tập: <a expr:href='data:post.author.profileUrl'><data:post.author.name/></a></li>
+					<li>Ngày tạo: <a expr:href='data:blog.homepageUrl + format(data:post.date, "YYYY/MM")'><b:eval expr='format(data:post.date, "d/M/Y")'/></a></li>
+					<li>Tải về: 
+						<b:loop values='data:post.enclosures' var='enclosure'>
+							<b:if cond='data:enclosure.mimeType == "epub"'>
+								<a class='w3-tag w3-green w3-hover-gray' expr:href='data:enclosure.url'>ePub</a>
+							</b:if>
+						</b:loop>
+						<b:loop values='data:post.enclosures' var='enclosure'>
+							<b:if cond='data:enclosure.mimeType == "pdf"'>
+								<a class='w3-tag w3-red w3-hover-gray' expr:href='data:enclosure.url'>PDF</a>
+							</b:if>
+						</b:loop>
+						<b:loop values='data:post.enclosures' var='enclosure'>
+							<b:if cond='data:enclosure.mimeType == "mobi"'>
+								<a class='w3-tag w3-indigo w3-hover-gray' expr:href='data:enclosure.url'>MOBI</a>
+							</b:if>
+						</b:loop>
+						<b:loop values='data:post.enclosures' var='enclosure'>
+							<b:if cond='data:enclosure.mimeType == "txt"'>
+								<a class='w3-tag w3-blue-gray w3-hover-gray' expr:href='data:enclosure.url'>TXT</a>
+							</b:if>
+						</b:loop>
+						<b:loop values='data:post.enclosures' var='enclosure'>
+							<b:if cond='data:enclosure.mimeType == "khac"'>
+								<a class='w3-tag w3-dark-gray w3-hover-gray' expr:href='data:enclosure.url'>Tải về</a>
+							</b:if>
+						</b:loop>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr/>
+		<!-- review -->
+		<h3 class="w3-large"><span class="w3-border-bottom w3-border-blue">Giới thiệu sách:</span></h3>
+		<div class="w3-padding-16 sv-review"><data:post.body/></div>
+
+	</b:includable>
+
+	<!-- postPagination -->
+	<b:includable id='postPagination'>
+		<b:if cond='data:olderPageUrl or data:newerPageUrl'>
+			<div class="w3-bar w3-border w3-round w3-section w3-white">
+				<b:if cond='data:newerPageUrl'>
+					<a class='w3-button' expr:href='data:newerPageUrl'>&#10094; Trang trước</a>
+				</b:if>
+				<b:if cond='data:olderPageUrl'>
+					<a class='w3-button w3-right' expr:href='data:olderPageUrl'>Trang sau &#10095;</a>
+				</b:if>
+			</div>
+		</b:if>
+	</b:includable>
+
+</b:widget>
+
+<!-- thể loại -->
+<b:widget cond='data:blog.url == data:blog.homepageUrl path "p/the-loai.html"' id='Label2' locked='false' title='Thể loại' type='Label' visible='true'>
+	<b:includable id='main' var='this'>
+		<h1 class="w3-border-bottom w3-border-blue w3-large sv-ff">Thể loại</h1>
+		<ul class="w3-ul">
+			<b:loop values='data:labels' var='label'>
+				<b:if cond='data:label.name in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+					<li class='w3-hover-white'><a class='w3-show' expr:href='data:label.url'><data:label.name/> <span class="w3-badge w3-right w3-margin-right"><data:label.count/></span></a></li>
+				</b:if>
+			</b:loop>
+		</ul>
+	</b:includable>
+</b:widget>
+
+<!-- tác giả -->
+<b:widget cond='data:blog.url == data:blog.homepageUrl path "p/tac-gia.html"' id='Label3' locked='false' title='Thể loại' type='Label' visible='true'>
+	<b:includable id='main' var='this'>
+		<h1 class="w3-border-bottom w3-border-blue w3-large sv-ff">Tác giả</h1>
+		<ul class="w3-ul">
+			<b:loop values='data:labels' var='label'>
+				<b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'>
+					<li class='w3-hover-white'><a class='w3-show' expr:href='data:label.url'><data:label.name/> <span class="w3-badge w3-right w3-margin-right"><data:label.count/></span></a></li>
+				</b:if>
+			</b:loop>
+		</ul>
+	</b:includable>
+</b:widget>
+
+<!-- pho bien LAST_WEEK -->
+<b:widget cond='data:blog.url == data:blog.homepageUrl path "p/sach-xem-nhieu.html"' id='PopularPosts2' locked='false' title='Sách phổ biến tuần' type='PopularPosts' visible='true'>
+	<b:widget-settings>
+		<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+		<b:widget-setting name='showThumbnails'>false</b:widget-setting>
+		<b:widget-setting name='showSnippets'>false</b:widget-setting>
+		<b:widget-setting name='timeRange'>LAST_WEEK</b:widget-setting>
+	</b:widget-settings>
+	<b:includable id='main' var='this'>
+		<b:include name='isPhoBien'/>
+	</b:includable>
+	<b:includable id='isPhoBien'>
+		<h2 class="w3-border-bottom w3-border-blue w3-large sv-ff">Tuần này</h2>
+		<b:loop values='data:posts filter (p => p.id)' var='post'>
+			<b:include data='post' name='isRowPhoBien'/>
+		</b:loop>
+	</b:includable>
+	<b:includable id='isRowPhoBien'>
+		<div class="w3-row w3-section">
+			<div class="w3-col" style="width: 72px">
+				<a expr:href='data:post.link ? data:post.link : data:post.url'>
+					<b:if cond='data:post.featuredImage'>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' expr:data-src='data:post.featuredImage resizeImage 72' expr:title='data:post.title' expr:alt='data:post.title'/>
+					<b:else/>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src='https://via.placeholder.com/120x180?text=SV' alt='no image'/>
+					</b:if>
+				</a>
+			</div>
+			<div class="w3-rest sv-padding-left">
+				<h3 class="w3-medium sv-margin-0">
+					<a class='w3-text-indigo' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+				</h3>
+				<h4 class="w3-medium sv-margin-0 w3-margin-bottom sv-tags-links">
+					<span class="w3-small">tg</span> <b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop>
+				</h4>
+				<div class="w3-text-gray w3-small"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+			</div>
+		</div>
+	</b:includable>
+</b:widget>
+
+<!-- pho bien LAST_MONTH -->
+<b:widget cond='data:blog.url == data:blog.homepageUrl path "p/sach-xem-nhieu.html"' id='PopularPosts3' locked='false' title='Sách phổ biến tháng' type='PopularPosts' visible='true'>
+	<b:widget-settings>
+		<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+		<b:widget-setting name='showThumbnails'>false</b:widget-setting>
+		<b:widget-setting name='showSnippets'>false</b:widget-setting>
+		<b:widget-setting name='timeRange'>LAST_MONTH</b:widget-setting>
+	</b:widget-settings>
+	<b:includable id='main' var='this'>
+		<b:include name='isPhoBien'/>
+	</b:includable>
+	<b:includable id='isPhoBien'>
+		<h2 class="w3-border-bottom w3-border-blue w3-large sv-ff">Tháng này</h2>
+		<b:loop values='data:posts filter (p => p.id)' var='post'>
+			<b:include data='post' name='isRowPhoBien'/>
+		</b:loop>
+	</b:includable>
+	<b:includable id='isRowPhoBien'>
+		<div class="w3-row w3-section">
+			<div class="w3-col" style="width: 72px">
+				<a expr:href='data:post.link ? data:post.link : data:post.url'>
+					<b:if cond='data:post.featuredImage'>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' expr:data-src='data:post.featuredImage resizeImage 72' expr:title='data:post.title' expr:alt='data:post.title'/>
+					<b:else/>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src='https://via.placeholder.com/120x180?text=SV' alt='no image'/>
+					</b:if>
+				</a>
+			</div>
+			<div class="w3-rest sv-padding-left">
+				<h3 class="w3-medium sv-margin-0">
+					<a class='w3-text-indigo' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+				</h3>
+				<h4 class="w3-medium sv-margin-0 w3-margin-bottom sv-tags-links">
+					<span class="w3-small">tg</span> <b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop>
+				</h4>
+				<div class="w3-text-gray w3-small"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+			</div>
+		</div>
+	</b:includable>
+</b:widget>
+
+<!-- pho bien LAST_YEAR -->
+<b:widget cond='data:blog.url == data:blog.homepageUrl path "p/sach-xem-nhieu.html"' id='PopularPosts4' locked='false' title='Sách phổ biến năm' type='PopularPosts' visible='true'>
+	<b:widget-settings>
+		<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+		<b:widget-setting name='showThumbnails'>false</b:widget-setting>
+		<b:widget-setting name='showSnippets'>false</b:widget-setting>
+		<b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
+	</b:widget-settings>
+	<b:includable id='main' var='this'>
+		<b:include name='isPhoBien'/>
+	</b:includable>
+	<b:includable id='isPhoBien'>
+		<h2 class="w3-border-bottom w3-border-blue w3-large sv-ff">Năm nay</h2>
+		<b:loop values='data:posts filter (p => p.id)' var='post'>
+			<b:include data='post' name='isRowPhoBien'/>
+		</b:loop>
+	</b:includable>
+	<b:includable id='isRowPhoBien'>
+		<div class="w3-row w3-section">
+			<div class="w3-col" style="width: 72px">
+				<a expr:href='data:post.link ? data:post.link : data:post.url'>
+					<b:if cond='data:post.featuredImage'>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' expr:data-src='data:post.featuredImage resizeImage 72' expr:title='data:post.title' expr:alt='data:post.title'/>
+					<b:else/>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src='https://via.placeholder.com/120x180?text=SV' alt='no image'/>
+					</b:if>
+				</a>
+			</div>
+			<div class="w3-rest sv-padding-left">
+				<h3 class="w3-medium sv-margin-0">
+					<a class='w3-text-indigo' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+				</h3>
+				<h4 class="w3-medium sv-margin-0 w3-margin-bottom sv-tags-links">
+					<span class="w3-small">tg</span> <b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop>
+				</h4>
+				<div class="w3-text-gray w3-small"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+			</div>
+		</div>
+	</b:includable>
+</b:widget>
+
+<!-- pho bien all time -->
+<b:widget cond='data:blog.url == data:blog.homepageUrl path "p/sach-xem-nhieu.html"' id='PopularPosts5' locked='false' title='Sách phổ biến tất cả' type='PopularPosts' visible='true'>
+	<b:widget-settings>
+		<b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+		<b:widget-setting name='showThumbnails'>false</b:widget-setting>
+		<b:widget-setting name='showSnippets'>false</b:widget-setting>
+		<b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+	</b:widget-settings>
+	<b:includable id='main' var='this'>
+		<b:include name='isPhoBien'/>
+	</b:includable>
+	<b:includable id='isPhoBien'>
+		<h2 class="w3-border-bottom w3-border-blue w3-large sv-ff">Tất cả</h2>
+		<b:loop values='data:posts filter (p => p.id)' var='post'>
+			<b:include data='post' name='isRowPhoBien'/>
+		</b:loop>
+	</b:includable>
+	<b:includable id='isRowPhoBien'>
+		<div class="w3-row w3-section">
+			<div class="w3-col" style="width: 72px">
+				<a expr:href='data:post.link ? data:post.link : data:post.url'>
+					<b:if cond='data:post.featuredImage'>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' expr:data-src='data:post.featuredImage resizeImage 72' expr:title='data:post.title' expr:alt='data:post.title'/>
+					<b:else/>
+						<img class='w3-image lazy' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src='https://via.placeholder.com/120x180?text=SV' alt='no image'/>
+					</b:if>
+				</a>
+			</div>
+			<div class="w3-rest sv-padding-left">
+				<h3 class="w3-medium sv-margin-0">
+					<a class='w3-text-indigo' expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+				</h3>
+				<h4 class="w3-medium sv-margin-0 w3-margin-bottom sv-tags-links">
+					<span class="w3-small">tg</span> <b:loop values='data:post.labels' var='label'><b:if cond='data:label.name not in ["Cổ Đại", "Dị Giới", "Đam Mỹ", "Điền Văn", "Hài Hước", "Huyền Huyễn", "Kiếm Hiệp", "Lịch Sử", "Linh Dị", "ngon tinh", "Ngôn Tình", "Ngược", "Nữ Cường", "Sắc", "Tiên Hiệp", "Trinh Thám", "Trọng Sinh", "Truyện Teen", "Xuyên Không"]'><a class='w3-text-gray' expr:href='data:label.url' expr:title='"Tác giả " + data:label.name'><data:label.name/></a></b:if></b:loop>
+				</h4>
+				<div class="w3-text-gray w3-small"><b:eval expr='format(data:post.date, "d MMM, YYYY")'/></div>
+			</div>
+		</div>
+	</b:includable>
+</b:widget>
+
+
+</b:section>
+
+			</div>
+		</b:tag>
+		<!-- /.content -->
+
+	</div>
+	<!-- /.main -->
+
+	<!-- footer -->
+	<div class="sv-footer w3-panel w3-border-top w3-border-blue w3-padding-16">
+		&#169; 2020 <a expr:href='data:blog.homepageUrl' expr:title='data:blog.title'>Demo.com</a>
+	</div>
+
+</div>
+<!-- /.wrapper -->
+
+<script type='text/javascript'>
+// <![CDATA[
+/* lazyload */
+!function(e){function t(e,t){var n=new Image,r=e.getAttribute("data-src");n.onload=function(){e.parent?e.parent.replaceChild(n,e):e.src=r,t&&t()},n.src=r}for(var n=new Array,r=function(e,t){if(document.querySelectorAll)t=document.querySelectorAll(e);else{var n=document,r=n.styleSheets[0]||n.createStyleSheet();r.addRule(e,"f:b");for(var l=n.all,o=0,c=[],i=l.length;o<i;o++)l[o].currentStyle.f&&c.push(l[o]);r.removeRule(0),t=c}return t}("img.lazy"),l=function(){for(var r=0;r<n.length;r++)l=n[r],o=void 0,(o=l.getBoundingClientRect()).top>=0&&o.left>=0&&o.top<=(e.innerHeight||document.documentElement.clientHeight)&&t(n[r],function(){n.splice(r,r)});var l,o},o=0;o<r.length;o++)n.push(r[o]);l(),function(t,n){e.addEventListener?this.addEventListener(t,n,!1):e.attachEvent?this.attachEvent("on"+t,n):this["on"+t]=n}("scroll",l)}(this);
+// ]]>
+</script>
+
+</body>
+</html>
