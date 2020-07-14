@@ -342,26 +342,6 @@ a {color:#3f51b5;text-decoration:none;}
 	.sv-tablet { width: 100% }
 }
 .sv-align-center { clear: both; display: block; margin: 0 auto }
-.sv-share a {
-	display: inline-block;
-	width: 18px;
-	height: 18px;
-	margin: 0;
-	padding: 0 5px;
-	vertical-align: middle;
-	-o-transition: all .3s;
-	-moz-transition: all .3s;
-	-webkit-transition: all .3s;
-	-ms-transition: all .3s;
-	text-indent: -9999em;
-}
-.sv-share a.sv-twitter {
-	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAsCAMAAABfYBi4AAAA1VBMVEUAAABOnLJYWFhXV1dWVlZXV1dNnLNUc3xOd4NXV1dWVlZWVlZWVlZOnbNVVVVNmrFNnLNTU1NVVVVWVlZXV1dYWFhPnrROnLNOnbNNm7FOnLJOnbRPnrVOm7FWVlZWVlZXV1dXV1dMma9OnrRPoLdQorlPnrVPn7ZOnbVOnbNWVlZNmq9LlqxTU1NYWFhQoLdLlqtQnrZQobdQoLdXV1dXV1dXV1dRo7tLlqxYWFhWVlZOnbRPn7VNnLJQoLdLlqxMma5NmrBQobhLmK5Mma9XV1dXV1cK7uTEAAAAOXRSTlMAHJfZCI5GBQFnJC8StKQi0DPirOGCa3lShI/foKkZX8BY7tZLFAzuLsL1/MzQdGDcPHC9uPXwOFolUOMQAAABPUlEQVQoz+WO2XaCMBCGEUHBgivu+1a1p5vdk0kCEef9X6kZqD3l0utOLnLmO/Mv1pVT7TenjSLqAUxKBVLSWovmk/cHDVUqQcHAus3WRsWz1lrBScvX/gsRbxAPNwnE5kkYDwhVxjGsFMgkibWaHg3ZjkFodRZnDSk8bzOrrwMIobQGKdPJpeVxdJICEqFFxaybPaX2EgVnoU+hR9679agfJqmKlRT3ef19CEJKE5iKUeni9Dk87FbNsNew/sFUveLudMudWhG5iPVWgdxwztmd6/ysZGEzzpGhX63lF4+B0+aIjGPZ9rMgn3d8jkaJhi1zQj4Ms88mYRAhcsYzgg+5e8v9YMwwojbJCAY+M94UQM3my5pjzVyjJLGbFSi/LzoRN0fM1M+bBl3yQRMY+b/db7pvUXtRn8+sK+Ybt2Y2rWkgh1UAAAAASUVORK5CYII=') left top no-repeat;
-}
-.sv-share a.sv-facebook {
-	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAsCAMAAABfYBi4AAAAt1BMVEUAAABWVlZNm7FOnbNWVlZTb3dVVVVXV1dPnrVVVVVVVVVXV1dWVlZOnLNZWVlXV1dPnrVOnLJWVlZXV1dYWFhOnLJNm7FQobhNmrBNnLJKlqxPnrVYWFhWVlZOm7JZWVlOnLNSUlJMma9PnrVOnrRPn7VRorlOnLNXV1dYWFhbW1tYWFhZWVlRo7pYWFhNm7BPoLZQoLdNm7FXV1dUVFRPn7ZOnbRQobhOnLJMmrBLmK1VVVVWVlYHHWokAAAAM3RSTlMANi+jowHuBwfjHGASOOvdUwVCftQc7OzgR6PeUbYn9Pek5arQTOlfLbAkm29BLvW8dMUsz8o9AAABC0lEQVQoz8XP2VKDMBQGYECh7EuhAtLNrlp3D9kg7/9cxhljQvGid/1zkck3J/PPMX6T7jqEm9RQqREVZ6PTFiNKcLVXklWkOxyP+5kit6Ho3hgkawgd0HJpHRD9qlMrk7TpkAjD9NOVVGGEKcUM1YbMrmOMEkbWqtCKXt8J/rAiWytwS0RuxK3THaHnVHZ4NIVGVLLx1GhHd03Ydki2FUUz4+qxT6ZpPoaaTPJVDzwONArgJ95c+7YA4ADFVPvnQVuY5luoUcLhQT4kAb/VYR4EK4Akz6cTSU4PIhzg5Y88AT1wDqpw4SWtwKRQhb5/cgCeQt/WG2MA2SjJgf6c4vafKbhsarxj/ywf35zVI3hsPdjIAAAAAElFTkSuQmCC') left top no-repeat;
-}
-.sv-share a:hover { background-position: left -26px; }
 ]]></b:skin>
 </head>
 <body>
@@ -712,10 +692,10 @@ a {color:#3f51b5;text-decoration:none;}
 		<div class="w3-padding-16 sv-review">
 			<data:post.body/>
 			<!-- share -->
-			<div class="sv-share">
+			<div class="w3-margin-top">
 				<h4 class="w3-medium">Chia sẻ tác phẩm này</h4>
-				<a class='sv-twitter' target='_blank' expr:href='"https://twitter.com/share?url=" + data:post.url + "&amp;text=" + data:post.title'>Twitter</a>
-				<a class='sv-facebook' target='_blank' expr:href='"https://www.facebook.com/sharer.php?u=" + data:post.url + "&amp;t=" + data:post.title'>Facebook</a>
+				<a class='w3-button w3-indigo w3-round w3-padding-small w3-small' target='_blank' expr:href='"https://www.facebook.com/sharer.php?u=" + data:post.url + "&amp;t=" + data:post.title'>Facebook</a>
+				<a class='w3-button w3-blue w3-round w3-padding-small w3-small' target='_blank' expr:href='"https://twitter.com/share?url=" + data:post.url + "&amp;text=" + data:post.title'>Twitter</a>
 			</div>
 		</div>
 
