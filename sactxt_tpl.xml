@@ -25,20 +25,20 @@
 <b:elseif cond='data:view.isArchive'/>
 	<title>Trang lưu trữ: <data:view.title.escaped/></title>
 <b:elseif cond='data:view.isPost'/>
-	<title>Trang item: <data:view.title.escaped/></title>
+	<title><data:view.title.escaped/></title>
 <b:elseif cond='data:view.isPage'/>
-	<title>Trang tĩnh: <data:view.title.escaped/></title>
+	<title><data:view.title.escaped/></title>
 <b:elseif cond='data:view.isSearch'/>
 	<b:if cond='data:view.search.label'>
-		<b:if cond='data:blog.searchLabel == "Cổ Đại"'>
-			<title>Nhãn tuỳ chọn: <data:view.search.label.escaped/></title>
+		<b:if cond='data:blog.searchLabel == "Văn học"'>
+			<title><data:view.search.label.escaped/></title>
 		<b:else/>
-			<title>Khác nhãn: <data:view.search.label.escaped/></title>
+			<title>#<data:view.search.label.escaped/></title>
 		</b:if>
 	<b:elseif cond='data:view.search.query'/>
 		<title>Tìm kiếm: <data:view.search.query.escaped/></title>
 	<b:else/>
-		<title>Trang chủ tiếp: <data:view.title.escaped/></title>
+		<title>Trang chủ: <data:view.title.escaped/></title>
 	</b:if>
 <b:else/>
 	<title>Khác: <data:view.title.escaped/></title>
@@ -279,117 +279,117 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 /* custom */
 .section, .widget { padding: 0; margin: 0; border: none }
 
-		/* core */
-		a:focus,
-		a:hover {
-			color: #0056b3;
-			text-decoration: underline;
-		}
+/* core */
+a:focus,
+a:hover {
+	color: #0056b3;
+	text-decoration: underline;
+}
 
-		a {
-			color: #007bff;
-			text-decoration: none;
-		}
+a {
+	color: #007bff;
+	text-decoration: none;
+}
 
-		.clearfix::after {
-			content: "";
-			clear: both;
-			display: table;
-		}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
 
-		.input-focus-0 {
-			outline: 0;
-		}
+.input-focus-0 {
+	outline: 0;
+}
 
-		/* padding */
-		.p-0 {
-			padding: 0 0 !important;
-		}
+/* padding */
+.p-0 {
+	padding: 0 0 !important;
+}
 
-		/* margin */
-		.m-0 {
-			margin: 0 0 !important;
-		}
+/* margin */
+.m-0 {
+	margin: 0 0 !important;
+}
 
-		.mx-auto {
-			margin-right: auto !important;
-			margin-left: auto !important;
-		}
+.mx-auto {
+	margin-right: auto !important;
+	margin-left: auto !important;
+}
 
-		.w-100 {
-			width: 100% !important;
-		}
+.w-100 {
+	width: 100% !important;
+}
 
-		.h-100 {
-			height: 100% !important;
-		}
+.h-100 {
+	height: 100% !important;
+}
 
-		.mw-100 {
-			max-width: 100% !important;
-		}
+.mw-100 {
+	max-width: 100% !important;
+}
 
-		.mh-100 {
-			max-height: 100% !important;
-		}
+.mh-100 {
+	max-height: 100% !important;
+}
 
-		@media (max-width: 992px) and (min-width: 601px) {
-			.w-100-md {
-				width: 100%;
-			}
-		}
+@media (max-width: 992px) and (min-width: 601px) {
+	.w-100-md {
+		width: 100%;
+	}
+}
 
-		/* font size */
-		.font-size-11 {
-			font-size: 11px;
-		}
+/* font size */
+.font-size-11 {
+	font-size: 11px;
+}
 
-		.font-size-13 {
-			font-size: 13px;
-		}
+.font-size-13 {
+	font-size: 13px;
+}
 
-		.font-size-14 {
-			font-size: 14px;
-		}
+.font-size-14 {
+	font-size: 14px;
+}
 
-		.font-size-16 {
-			font-size: 16px;
-		}
+.font-size-16 {
+	font-size: 16px;
+}
 
-		.font-weight-light {
-			font-weight: 300 !important;
-		}
+.font-weight-light {
+	font-weight: 300 !important;
+}
 
-		.font-weight-normal {
-			font-weight: 400 !important;
-		}
+.font-weight-normal {
+	font-weight: 400 !important;
+}
 
-		.font-weight-bold {
-			font-weight: 700 !important;
-		}
+.font-weight-bold {
+	font-weight: 700 !important;
+}
 
-		.font-italic {
-			font-style: italic !important;
-		}
+.font-italic {
+	font-style: italic !important;
+}
 
-		/* text */
-		.text-uppercase {
-			text-transform: uppercase;
-		}
+/* text */
+.text-uppercase {
+	text-transform: uppercase;
+}
 
-		.text-truncate {
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-		}
+.text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 
-		.text-decoration-none {
-			text-decoration: none !important;
-		}
+.text-decoration-none {
+	text-decoration: none !important;
+}
 
-		.list-unstyled {
-			list-style: none;
-			padding-left: 0;
-		}
+.list-unstyled {
+	list-style: none;
+	padding-left: 0;
+}
 
 ]]></b:skin>
 
@@ -402,10 +402,16 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 			<div class="w3-row-padding w3-stretch w3-blue-gray w3-padding-16 w3-margin-bottom">
 				
 				<div class="w3-col l6">
-					<a class='w3-text-white' expr:href='data:blog.homepageUrl' expr:title='data:blog.title'><span class="w3-xxlarge">Sắc TXT</span></a>
+					<b:if cond='data:view.isHomepage'>
+						<h1 class="m-0 w3-xxlarge"><a class='w3-text-white' expr:href='data:blog.homepageUrl' expr:title='data:blog.title'>Sắc TXT</a></h1>
+					<b:else/>
+						<div class="m-0 w3-xxlarge"><a class='w3-text-white' expr:href='data:blog.homepageUrl' expr:title='data:blog.title'>Sắc TXT</a></div>
+					</b:if>
+					<p class="m-0">Tải txt truyện sắc miễn phí</p>
 				</div>
+
 				<div class="w3-col l6">
-					<form expr:action='data:blog.searchUrl' class='w3-right w3-mobile w3-row w-100' style='margin-top: 8px'>
+					<form expr:action='data:blog.searchUrl' class='w3-right w3-mobile w3-row w-100 w3-section'>
 						<input class='w3-input w3-border-0 w3-white w3-col s10 m11 l10 input-focus-0' style='border-radius: 5px 0 0 5px' name='q' placeholder='Tìm tên truyện có dấu...' expr:value='data:view.isSearch ? data:view.search.query.escaped : ""'/>
 						<button class="w3-button w3-blue w3-col s2 m1 l2 w3-hover-indigo input-focus-0" style="border-radius: 0 5px 5px 0" type="submit"><svg class="bi bi-search" fill="currentColor" height="1em" viewBox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" fill-rule="evenodd"></path><path d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" fill-rule="evenodd"></path></svg></button>
 					</form>
@@ -417,7 +423,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 			<div class="w3-row-padding w3-stretch">
 				
 				<!-- left -->
-				<div class="w3-col l8">
+				<div class="w3-col l8 w3-section">
 
 
 <!-- section blog -->
@@ -477,16 +483,18 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 			<!-- trang tìm kiếm -->
 			<b:elseif cond='data:view.isSearch'/>
+				<!-- label -->
 				<b:if cond='data:view.search.label'>
 					<b:if cond='data:blog.searchLabel == "Văn học"'>
 						<h1>Đây là nhãn Văn học</h1>
 					<b:else/>
-						<h1 class="w3-xlarge"><b:eval expr='data:blog.pageName ? data:blog.pageName : "Sắc TXT"'/></h1>
+						<h1 class="w3-xlarge">#<b:eval expr='data:blog.pageName ? data:blog.pageName : "Sắc TXT"'/></h1>
 						<!-- print posts -->
 						<b:loop values='data:posts' var='post'>
 							<b:include data='post' name='isHomepage'/>
 						</b:loop>
 					</b:if>
+				<!-- tim kiem -->
 				<b:elseif cond='data:view.search.query'/>
 					<h1 class="w3-xlarge"><b:eval expr='data:blog.pageName ? data:blog.pageName : "Sắc TXT"'/></h1>
 					<!-- print posts -->
@@ -515,7 +523,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 		<!-- isHomepage -->
 		<b:includable id='isHomepage' var='post'>
 
-			<div class="w3-border w3-round-large w3-padding w3-section">
+			<div class="w3-border w3-round-large w3-padding w3-section w3-hover-light-gray">
 
 				<h3 class="w3-large w3-margin-bottom">
 					<a expr:href='data:post.link ? data:post.link : data:post.url' expr:title='data:post.title'><data:post.title/></a>
@@ -550,18 +558,15 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 			<div class="w3-section">
 				Tags: 
 				<b:loop values='data:post.labels' var='label'>
-					<a expr:href='data:label.url'><span class="w3-tag w3-blue"><data:label.name/></span></a>
+					<a expr:href='data:label.url'><span class="w3-tag w3-blue" style="margin: 5px 2px">#<data:label.name/></span></a>
 				</b:loop>
 			</div>
 			<hr/>
 			<!-- alert -->
 			<div class="w3-panel w3-border w3-border-red">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>#Convert là truyện sắc của Trung Quốc được chuyển ngữ thô và có nhiều lỗi ngữ nghĩa như tên nhân vật, tên địa danh... nói chung đọc tạm được.</p>
+				<p>Có hai định dạng dành cho #Convert là raw thô bản việt và bản trung dành cho anh em nào thích tự dịch tự chuyển.</p>
+				<p>Để chuyển đổi thì anh em dùng VietPhrase của Tangthuvien nhé.</p>
 			</div>
 
 			<data:post.body/>
@@ -572,17 +577,17 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 				
 				<b:loop values='data:post.enclosures' var='enclosure'>
 					<b:if cond='data:enclosure.mimeType == "vi"'>
-						<a class='w3-button w3-red w3-round text-uppercase' expr:href='data:enclosure.url'>Tải về TXT</a>
+						<a class='w3-button w3-red w3-round text-uppercase w3-section w3-mobile' expr:href='data:enclosure.url'>Tải về TXT</a>
 					</b:if>
 				</b:loop>
 				<b:loop values='data:post.enclosures' var='enclosure'>
 					<b:if cond='data:enclosure.mimeType == "cn"'>
-						<a class='w3-button w3-red w3-round text-uppercase' expr:href='data:enclosure.url'>Tải về TXT Trung</a>
+						<a class='w3-button w3-red w3-round text-uppercase w3-section w3-mobile' expr:href='data:enclosure.url'>Tải về TXT Trung</a>
 					</b:if>
 				</b:loop>
 				<b:loop values='data:post.enclosures' var='enclosure'>
 					<b:if cond='data:enclosure.mimeType == "txt"'>
-						<a class='w3-button w3-red w3-round text-uppercase' expr:href='data:enclosure.url'>Tải về</a>
+						<a class='w3-button w3-red w3-round text-uppercase w3-section w3-mobile' expr:href='data:enclosure.url'>Tải về</a>
 					</b:if>
 				</b:loop>
 
@@ -612,22 +617,22 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 				</div><!-- /left -->
 
 				<!-- sidebar -->
-				<div class="w3-col l4">
+				<div class="w3-col l4 w3-section">
 
 <!-- Truyen pho bien -->
 <h2 class="w3-xlarge">Truyện xem nhiều</h2>
 <div class="w3-row">
 	<a href="javascript:void(0)" onclick="openView(event, 'Tuan');">
-		<div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red">Tuần</div>
+		<div class="w3-col s3 tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red w3-center">Tuần</div>
 	</a>
 	<a href="javascript:void(0)" onclick="openView(event, 'Thang');">
-		<div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding">Tháng</div>
+		<div class="w3-col s3 tablink w3-bottombar w3-hover-light-grey w3-padding w3-center">Tháng</div>
 	</a>
 	<a href="javascript:void(0)" onclick="openView(event, 'Nam');">
-		<div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding">Năm</div>
+		<div class="w3-col s3 tablink w3-bottombar w3-hover-light-grey w3-padding w3-center">Năm</div>
 	</a>
 	<a href="javascript:void(0)" onclick="openView(event, 'Tong');">
-		<div class="w3-quarter tablink w3-bottombar w3-hover-light-grey w3-padding">Tổng</div>
+		<div class="w3-col s3 tablink w3-bottombar w3-hover-light-grey w3-padding w3-center">Tổng</div>
 	</a>
 </div>
 
@@ -749,6 +754,19 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 </b:widget>
 
 
+<!-- label -->
+<b:widget id='Label1' locked='false' title='Thể loại' type='Label' visible='true'>
+	<b:includable id='main' var='this'>
+
+		<h2 class="w3-xlarge">Thẻ</h2>
+		<b:loop values='data:labels' var='label'>
+			<a expr:href='data:label.url'><span class='w3-tag' style='margin-top: 3px; margin-bottom: 3px'><data:label.name/> (<data:label.count/>)</span></a>
+		</b:loop>
+
+	</b:includable>
+</b:widget>
+
+
 </b:section>
 
 				</div><!-- /sidebar -->
@@ -756,7 +774,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 			</div>
 
 			<!-- footer -->
-			<div class="w3-blue-gray w3-padding w3-margin-top">
+			<div class="w3-blue-gray w3-padding w3-stretch w3-margin-top">
 				2020 Sắc txt blogger
 			</div>
 
