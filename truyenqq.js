@@ -39,7 +39,7 @@
 	function save() {
 		var title = $('span[itemprop="name"]:eq(1)').text().trim();
 		var chapTitle = $('span[itemprop="name"]:eq(2)').text().trim();
-		data = '<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet"><style>::-webkit-scrollbar {width: 0;}body{background-image: url("https://i.imgur.com/Sd684Vr.jpg");background-color: #cccccc;margin:30px auto;text-align:center;max-width:1000px;background-attachment:fixed;}img{width:100%;display: block;}.demo-wrap{position:relative;border: 3px solid white; margin-bottom: 50px;}.demo-wrap:before{content:" ";display:block;position:absolute;left:0;top:0;width:100%;height:100%;opacity:.6;background-image:url(' + randomImg + ');background-repeat:no-repeat;background-position:50% 0;background-size:cover}.demo-content{position:relative;width:100%;height:700px}.center{margin:0;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:3px solid green;background-color:#fff;padding:30px 20px;text-align:center;width:700px}.title{font-family:"Sedgwick Ave Display",cursive;font-size:45px}.chapTitle{font-size:60px;color:red;text-transform:uppercase;-webkit-text-stroke:3px #ff5722}</style></head><body><div><div class="demo-wrap"><div class="demo-content"><div class="center"><div class="title">' + title + '</div><div class="chapTitle">' + chapTitle + '</div></div></div></div><div style="border: 3px solid white;">' + data + imgFooter + '</div></div></body></html>';
+		data = '<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet"><style>::-webkit-scrollbar {width: 0;}body{background-image: url("http://res.cloudinary.com/fivegins/image/upload/v1617879734/luufiles/brick-wall--dark--1920x1080yt_k4y24r.jpg");background-color: #cccccc;margin:30px auto;text-align:center;max-width:1000px;background-attachment:fixed;}img{width:100%;display: block;}.demo-wrap{position:relative;border: 3px solid white; margin-bottom: 50px;}.demo-wrap:before{content:" ";display:block;position:absolute;left:0;top:0;width:100%;height:100%;opacity:.6;background-image:url(' + randomImg + ');background-repeat:no-repeat;background-position:50% 0;background-size:cover}.demo-content{position:relative;width:100%;height:700px}.center{margin:0;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:3px solid green;background-color:#fff;padding:30px 20px;text-align:center;width:700px}.title{font-family:"Sedgwick Ave Display",cursive;font-size:45px}.chapTitle{font-size:60px;color:red;text-transform:uppercase;-webkit-text-stroke:3px #ff5722}</style></head><body><div><div class="demo-wrap"><div class="demo-content"><div class="center"><div class="title">' + title + '</div><div class="chapTitle">' + chapTitle + '</div></div></div></div><div style="border: 3px solid white;">' + data + imgFooter + '</div></div></body></html>';
 
 		var blob = new Blob([data], {
 			encoding: 'UTF-8',
@@ -59,8 +59,8 @@
 		data = '',
 		randomImg = '',
 		imgFooterRandom = [
-			'http://res.cloudinary.com/fivegins/image/upload/v1617859732/luufiles/8433x2_fbihdh.jpg',
-			'http://res.cloudinary.com/fivegins/image/upload/v1617859733/luufiles/37lxn1x_s9rgrn.jpg'
+			'http://res.cloudinary.com/fivegins/image/upload/v1617877287/luufiles/dangkyvalike_w5sd1k.jpg',
+			'http://res.cloudinary.com/fivegins/image/upload/v1617859732/luufiles/8433x2_fbihdh.jpg'
 		],
 		imgFooter = '<img src="' + randomArray(imgFooterRandom) + '">';
 
