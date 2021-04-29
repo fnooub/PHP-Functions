@@ -140,6 +140,13 @@
 		</div>
 
 <script>
+// play audio
+function playAudio() { 
+	var o = new Audio("http://res.cloudinary.com/fivegins/video/upload/v1617943753/luufiles/horse_cndllc.ogg");
+	o.loop =! 0;
+	o.play();
+}
+
 // scroll
 // 768 là chiều cao của full màn hình, tính chiều cao phần trăm của mành hình
 // https://github.com/ankitjain28may/autoscroll.js
@@ -160,6 +167,7 @@ function scroller(phantram = 60, action = 'down') {
 		autoScroll.animate({scrollTop: iScrollTop}, 400);
 		//console.log(iScrollTop);
 	}
+	// phần này là thêm vào
 	// phần trăm của trang cuộn được
 	var phantram = Math.ceil(iScrollTop*100/iScrollHeight);
 	if (phantram < 0) {
@@ -168,6 +176,9 @@ function scroller(phantram = 60, action = 'down') {
 		phantram = 100;
 	}
 	$("#dem").html(phantram + "%");
+	// play audio
+	if ((iScrollTop + iHeight) >= iScrollHeight) playAudio();
+	//console.log(iScrollHeight + ' - ' + iScrollTop + ' - ' + iHeight + ' - ' + (iScrollTop + iHeight));
 }
 
 // keyboard
